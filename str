@@ -1,0 +1,43 @@
+/*Write a program in Java for String handling which performs the following: i) Checks the capacity of StringBuffer objects. ii) Reverses the contents of a string given on console and converts the resultant       string in upper case. iii) Reads a string from console and appends it to the resultant string of ii.*/
+
+// StringHandler.java
+
+import java.io.*;
+class StringHandler
+  {
+    public static void main(String s[]) throws IOException
+      {
+ BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+ String s1,s2,s3,s4,s5;
+ int i,l;
+ s2=" ";
+ System.out.println("\nEnter the string : \t\t\t");
+ System.out.println("\n=======================\t");
+ s1=br.readLine();
+ System.out.println("\nEntered string is : \t\t\t "+s1);
+ System.out.println("\nlength of the string is : \t\t "+s1.length());
+ StringBuffer sb=new StringBuffer(s1);
+ System.out.println("\nCapacity of string buffer : \t\t "+sb.capacity());
+ l=s1.length();
+ if(l==0)
+  System.out.println("\nString is empty cannot be reversed");
+ else
+  {
+     for(i=l-1;i>=0;i--)
+  {
+   s2=s2+s1.charAt(i);
+  }
+     System.out.println("\nThe reversed string is : \t\t"+s2);
+     s3=s2.toUpperCase();
+        System.out.println("\nUpper case of reverse string is : \t"+s3);
+       System.out.println("\nEnter a new string : \t");
+     System.out.println("\n=======================\t");
+     s4=br.readLine();
+     System.out.println("\nThe entered new string is : \t\t "+s4);
+     StringBuffer sb1=new StringBuffer(s4);
+     s5=sb1.append(s3).toString();
+     System.out.println("\nThe appended string is : \t\t "+s5);
+  
+  }
+      }
+  }
